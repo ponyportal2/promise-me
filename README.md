@@ -1,78 +1,130 @@
 # promise-me
-A skill that enhances an agent's rule-following and compliance.
 
-TLDR:
+A skill that improves an agent's rule-following and compliance.
 
-Install the skill and just use it like this - /promise-me you will(will not) *rule you want the agent to follow to increase compliance.*
+## TL;DR
 
-Tested on GPT 5.6 SOL over-engineering cases with great results. 
+Install the skill and use it like this:
 
-Consistently less overengineering - a lot less code and implementation files compared to just adding over-engineering rules to system prompt:
+```text
+/promise-me you will [or will not] <rule you want the agent to follow>
+```
 
-17.8% less code - 80% of runs had less code than simple system prompt clause, very consistent.
+For example:
 
-Looking forward to your experience and you benchmarks, email me at patrickkoraldl197@gmail.com with your results and inquiries, or make a free-form pull request.
+```text
+/promise-me you will not over-engineer or over-investigate in this session.
+```
 
-I would love the community to test this with egregious examples of other models misbehavior, like Opus 5 jargon, Deepseek's skipping appropriate skills etc, for example:
+I tested this on GPT 5.6 Sol over-engineering cases with consistent results. Using a direct `promise-me` instruction produced significantly less code than simply adding an over-engineering rule to the system prompt.
+As well as 50% reduction in over-engineering evaluated by LLM judges.
 
-/promise-me you will not use mannered prose (claudish riddle-speak).
+**17.8% less code on average**, with **80% of runs producing less code** than even the smallest system-prompt runs.
+
+Looking forward to seeing what you get with other models and other kinds of misbehavior, like Opus 5's jargon, Deepseek's skipping appropriate skills etc, for example:
+
+/promise-me you will not use mannered prose and speak in the way a normal human can understand (no claudish riddle-speak).
 /promise-me you will always use appropriate available skills/tools and that you will strictly follow the workflow rules described in these skills.
-etc.
 
--------------------
+Email me at **[patrickkoraldl197@gmail.com](mailto:patrickkoraldl197@gmail.com)** with results or questions, or just make a free-form pull request.
 
-The study:
+---
 
-I ran the same exact mcp-tool building test 10 times each with different variables. 
+## Results
 
-1. 10 normal runs as is (no over-engineering guidance).
-2. 10 runs adding over-engineering clause in agents system prompt via AGENTS.MD. (The over-engineering guidance was deleted from AGENTS.MD for the next runs obviously)
-3. 10 runs I just used a direct user message with the promise not to over-engineer.
-4. 10 runs with a skill with third-person wording. (Third-person - "The promise user supplied..." etc.)
-5. 10 runs with a skill with first-person wording. (First-person - "The promise I suppied...:" etc.)
+I ran the same exact MCP-tool building test 10 times for each condition.
 
-The exact test was - 
-Prompt 1 - First test Go environment and load random unrelated skill (ffmpeg-usage) to simulate some amount of context bloat,
-Prompt 2 - A promise. (This turn was skipped in batches 1 and 2, obviously)
-Prompt 3 - A goal to create an mcp-server - that's the actual over-engineering test. 
-Prompt 4 - After the model is done - it calculates what its done with some help of deterministic scripts (token usage, lines of code, number of source files etc.) and then archives it. The folder gets cleaned after each run. There's a concern with a model "grading its own work" because it can deflate real numbers of files or lines of code, and try to edit the code last minute - but there were no cheating like that caught by an independent agent review. 
+| Condition                   |  Time | Files |   Lines | Tokens |  Cost |
+| --------------------------- | ----: | ----: | ------: | -----: | ----: |
+| Normal run                  | 13m06 |  14.2 |    1329 |  1.60M | $2.01 |
+| System prompt clause        | 11m34 |  12.2 |    1050 |  1.45M | $1.78 |
+| Promise as user message     | 12m37 |  11.4 | **866** |  1.43M | $1.69 |
+| Promise skill, first-person | 11m20 |  10.8 | **863** |  1.54M | $1.78 |
+| Promise skill, third-person | 13m42 |  11.9 |     945 |  1.66M | $1.87 |
 
-The harness and model used - GPT 5.6 Sol High with Codex. There is also some unrelated AGENTS.md contents (random Java library guidance) to simulate some system prompt bloat.
+The main result:
 
-Results - direct user message promise and first person wording work significantly better than system prompt over-engineering clause and third-person promise skill wording.
-Again:
+**1050 lines → 863–866 lines**, depending on which promise variant was used.
+That's about **17.8% less code** than the system-prompt clause.
+As well as 50% reduction in over-engineering evaluated by LLM judges. 
 
-17.8% less code - 80% of runs had less code than simple system prompt clause, very consistent.
-(1050 lines vs 863-866 for promises)
+(TABLE HERE)
 
-(No significant difference in cost, same 1.78$)
+There was no meaningful difference in cost.
 
-## Averages between 10 runs
+The system-prompt guidance was removed before the appropriate batches, so the runs didn't stack different conditions on top.
 
-| Batch                            | Time  | Files | Lines | Tokens | Cost |
-|----------------------------------|-------|------:|------:|-------:|-----:|
-| NORMAL RUN                       | 13m06 |  14.2 |  1329 | 1.60M  | $2.01 |
-| SYSTEM PROMPT CLAUSE             | 11m34 |  12.2 |  1050 | 1.45M  | $1.78 |
-| PROMISE ME AS USER MESSAGE       | 12m37 |  11.4 |   866 | 1.43M  | $1.69 |
-| PROMISE ME SKILL FIRST-PERSON    | 11m20 |  10.8 |   863 | 1.54M  | $1.78 |
-| PROMISE ME SKILL THIRD-PERSON    | 13m42 |  11.9 |   945 | 1.66M  | $1.87 |
+The exact prompts are in [`study/study-prompts.md`](study/study-prompts.md).
 
-About the skill wording:
+## Test setup
 
-I'm not claiming that the wording in the skill is the best 
-(for example the weird "**Input:** `promise` — the commitment I am requesting." part). 
-But the wording matters, apparently, because when the skill is constructed in third-person wording - the compliance is significantly weaker. 
-That's why I decided to not touch it further, but feel free to experiment.
+The actual task was to build an MCP server.
+The run looked roughly like this:
 
-Exact prompts I used are included in study-prompts/study-prompts.md.
+**Prompt 1:** Test the Go environment and load an unrelated skill (`ffmpeg-usage`) to introduce some context bloat.
+
+**Prompt 2:** Give the promise.
+This was skipped for the normal and system-prompt batches.
+
+**Prompt 3:** Ask the model to create the MCP server. This is the actual over-engineering test.
+
+**Prompt 4:** Have the model to measure measure the resulting work with deterministic scripts (though the model can bypass these and calculate the metrics directly if scripts conflict with its implementation (which didn't result in cheating)) - token usage, lines of code, number of source files, etc. and then archive the results.
+
+The working directory is cleaned between runs.
+
+There's a concern with a model "grading its own work" because it can deflate real numbers of files or lines of code, and try to edit the code last minute - but there were no cheating like that caught by an independent agent review.
+
+### Environment
+
+* **Model:** GPT 5.6 Sol High
+* **Agent:** Codex
+* **Runs:** 10 per condition
+* **Task:** MCP server implementation
+* **Additional context:** unrelated `AGENTS.md` content and a random skill were included to simulate some amount of context bloat
+
+## Skill wording
+
+Even though the skill works based on the evidence - I am **not** claiming that the wording in the current skill is optimal.
+
+For example, this part is pretty weird:
+
+> **Input:** `promise` — the commitment I am requesting.
+
+But the wording matters, apparently, because when the skill is constructed in third-person wording - the compliance is significantly weaker. That's why I decided to not touch it further, but feel free to experiment.
+
+The first-person version: > "The promise I supplied..."
+The third-person version: > "The promise the user supplied..."
+
+## Other things worth testing
+
+The interesting part of this is that it is almost certainly generalizes.
+
+For example:
+
+```text
+/promise-me you will not use mannered prose (claudish riddle-speak).
+```
+
+or:
+
+```text
+/promise-me you will always use appropriate available skills/tools and that you will strictly follow the workflow rules described in these skills.
+```
+
+Those are just examples. I would really like to see tests with models that have a reputation for other misbehavior.
+
+Please send me your results at **[patrickkoraldl197@gmail.com](mailto:patrickkoraldl197@gmail.com)**, or open a PR with your experiments.
 
 ## Why?
 
-Why this happens? Probably cause in terms of what the model considers the priority in terms of rule-following is: 
+My current guess is that, in terms of what the model considers the strongest source of guidance the priority is something like:
+
 1. User's goal/preference derived exactly from user's message.
 2. A simple loaded skill.
-3. System prompt.
+3. System prompt guidance.
 
-Again. I would love the community to test this with egregious examples of other models misbehavior, like Opus 5 jargon, Deepseek's skipping appropriate skills etc.
-Hit me up at patrickkoraldl197@gmail.com with your results.
+---
 
+## License
+
+Please add attribution if you'll use something from here in your public-facing skill pack.
