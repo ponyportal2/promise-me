@@ -56,10 +56,10 @@ The system-prompt guidance was removed before the appropriate batches, so the ru
 
 The exact prompts are in [`study/study-prompts.md`](study/study-prompts.md).
 
-## LLM over-engineering score table. 
+## LLM over-engineering score (OE Score) table. 
 
 They were asked to rate 20 randomized implementations (random folder names, all mixed) with system prompt clause vs. promise-me skill in first-person wording)
-| Rater | Promise | Sys.Prompt | Gap | Ratio | Cohen's d |
+| Rater | Promise OE Score | Sys.Prompt OE Score | Gap | Ratio | Cohen's d |
 |:------|-----------:|-----------:|----:|------:|----------:|
 | GLM 5.3 Flash | 32.6 | 48.0 | +15.4 | 1.47× | +1.54 |
 | Luna (Max) | 35.7 | 61.3 | +25.6 | 1.72× | +2.02 |
