@@ -6,6 +6,8 @@ A skill that improves an agent's rule-following and compliance.
 
 Asking a model to make a promise in its own words, and framing that promise as a bonding agreement with the agent can significantly improve compliance.
 
+And importantly - it worked significantly better than just system prompt (AGENTS.MD) guidance.
+
 For convenience, I wrapped this approach into an easy-to-use skill.
 
 Install the skill and use it like this:
