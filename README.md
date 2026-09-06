@@ -134,7 +134,9 @@ Please send me your results at **[patrickkoraldl197@gmail.com](mailto:patrickkor
 
 ## Why the promise works?
 
-My current guess is that, in terms of what the model considers the strongest source of guidance the priority is something like:
+My current guess is that, yes, probably the emotional gravity of the wording + more thinking time dedicated to the rule + a full reworded output turn acknowledging the rule as an agent's promise = all of that helps (every model is trained to be a user-pleaser and it doesn't want to break user's promise)
+
+Also in terms of what the model considers the strongest source of guidance the priority is probably something like:
 
 1. User's goal/preference derived exactly from user's message.
 2. A simple loaded skill.
