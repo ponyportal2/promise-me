@@ -126,6 +126,10 @@ My current guess is that, in terms of what the model considers the strongest sou
 2. A simple loaded skill.
 3. System prompt guidance.
 
+## Does this work on Astra (and is this even needed for it)?
+
+I may test that soon.
+
 ---
 
 ## License
