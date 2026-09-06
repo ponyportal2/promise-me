@@ -95,6 +95,7 @@ For example, this part is pretty weird:
 But the wording matters, apparently, because when the skill is constructed in third-person wording - the compliance is significantly weaker. That's why I decided to not touch it further, but feel free to experiment.
 
 The first-person version: > "The promise I supplied..."
+
 The third-person version: > "The promise the user supplied..."
 
 ## Other things worth testing
