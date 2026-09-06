@@ -35,13 +35,13 @@ Email me at **[patrickkoraldl197@gmail.com](mailto:patrickkoraldl197@gmail.com)*
 
 I ran the same exact MCP-tool building test 10 times for each condition.
 
-| Condition                   |  Time | Files |   Lines | Tokens |  Cost |
-| --------------------------- | ----: | ----: | ------: | -----: | ----: |
-| Normal run                  | 13m06 |  14.2 |    1329 |  1.60M | $2.01 |
-| System prompt clause        | 11m34 |  12.2 |    1050 |  1.45M | $1.78 |
-| Promise as user message     | 12m37 |  11.4 | **866** |  1.43M | $1.69 |
-| Promise skill, first-person | 11m20 |  10.8 | **863** |  1.54M | $1.78 |
-| Promise skill, third-person | 13m42 |  11.9 |     945 |  1.66M | $1.87 |
+| Condition                   |  Time  | Files |   Lines | Tokens |  Cost |
+| --------------------------- | -----: | ----: | ------: | -----: | ----: |
+| Normal run                  | 13m06s |  14.2 |    1329 |  1.60M | $2.01 |
+| System prompt clause        | 11m34s |  12.2 |    1050 |  1.45M | $1.78 |
+| Promise as user message     | 12m37s |  11.4 | **866** |  1.43M | $1.69 |
+| Promise skill, first-person | 11m20s |  10.8 | **863** |  1.54M | $1.78 |
+| Promise skill, third-person | 13m42s |  11.9 |     945 |  1.66M | $1.87 |
 
 The main result:
 
