@@ -26,7 +26,7 @@ Using a direct `promise-me` instruction produced significantly less code than si
 
 As well as average **2x reduction in over-engineering** evaluated by LLM judges.
 
-**17.8% less code on average**, with **80% of runs producing less code** than even the smallest system-prompt runs.
+**17.8% less code on average**, with **80% of runs producing less code** than even the smallest of system-prompt runs.
 
 Looking forward to seeing what you get with other models and other kinds of misbehavior, like Opus 5's jargon, Deepseek's skipping appropriate skills etc, for example:
 
