@@ -17,6 +17,7 @@ For example:
 ```
 
 I tested this on GPT 5.6 Sol over-engineering cases with consistent results. 
+
 Using a direct `promise-me` instruction produced significantly less code than simply adding an over-engineering rule to the system prompt.
 As well as average 2x reduction in over-engineering evaluated by LLM judges.
 
