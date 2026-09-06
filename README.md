@@ -118,7 +118,7 @@ Those are just examples. I would really like to see tests with models that have 
 
 Please send me your results at **[patrickkoraldl197@gmail.com](mailto:patrickkoraldl197@gmail.com)**, or open a PR with your experiments.
 
-## Why?
+## Why the promise works?
 
 My current guess is that, in terms of what the model considers the strongest source of guidance the priority is something like:
 
