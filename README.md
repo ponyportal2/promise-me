@@ -130,4 +130,6 @@ My current guess is that, in terms of what the model considers the strongest sou
 
 ## License
 
+MIT
+
 Please add attribution if you'll use something from here in your public-facing skill pack.
