@@ -23,7 +23,7 @@ As well as 50% reduction in over-engineering evaluated by LLM judges.
 
 Looking forward to seeing what you get with other models and other kinds of misbehavior, like Opus 5's jargon, Deepseek's skipping appropriate skills etc, for example:
 
-> /promise-me you will not use mannered prose and speak in the way a normal human can understand (no claudish riddle-speak).
+> /promise-me you will not use mannered prose and instead speak in the way a normal human can understand (no claudish riddle-speak).
 
 > /promise-me you will always use appropriate available skills/tools and that you will strictly follow the workflow rules described in these skills.
 
