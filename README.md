@@ -4,6 +4,10 @@ A skill that improves an agent's rule-following and compliance.
 
 ## TL;DR
 
+Asking a model to make a promise in its own words, and framing that promise as a bonding agreement with the agent can significantly improve compliance.
+
+For convenience, I wrapped this approach into an easy-to-use skill.
+
 Install the skill and use it like this:
 
 ```text
