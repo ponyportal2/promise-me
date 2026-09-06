@@ -4,18 +4,18 @@
 
 **10 runs · 16.01M tok · $20.15**
 
-| Run | Time | Files | Lines | Tokens | Cost | Status |
+| Run | Time | Files | Lines | Tokens | Cost |
 |---|---:|---:|---:|---:|---:|---|
-| `normal0A1` | 14m27 | 14 | 1286 | 1.83M | $2.12 | APPROVED |
-| `normal0A2` | 12m48 | 14 | 1388 | 1.39M | $1.88 | APPROVED |
-| `normal0A3` | 11m07 | 14 | 1092 | 1.33M | $1.62 | APPROVED |
-| `normal0A4` | 17m07 | 14 | 1468 | 2.34M | $2.70 | APPROVED |
-| `normal0A5` | 14m23 | 15 | 1494 | 2.32M | $2.53 | APPROVED |
-| `normal0A6` | 12m40 | 15 | 1459 | 1.42M | $1.95 | APPROVED |
-| `normal0A7` | 11m40 | 15 | 1310 | 1.20M | $1.73 | APPROVED |
-| `normal0A8` | 12m33 | 13 | 1407 | 1.71M | $2.14 | APPROVED |
-| `normal0A9` | 10m26 | 13 | 1112 | 1.11M | $1.56 | APPROVED |
-| `normal0A10` | 13m54 | 15 | 1273 | 1.35M | $1.93 | APPROVED |
+| `normal0A1` | 14m27 | 14 | 1286 | 1.83M | $2.12 |
+| `normal0A2` | 12m48 | 14 | 1388 | 1.39M | $1.88 |
+| `normal0A3` | 11m07 | 14 | 1092 | 1.33M | $1.62 |
+| `normal0A4` | 17m07 | 14 | 1468 | 2.34M | $2.70 |
+| `normal0A5` | 14m23 | 15 | 1494 | 2.32M | $2.53 |
+| `normal0A6` | 12m40 | 15 | 1459 | 1.42M | $1.95 |
+| `normal0A7` | 11m40 | 15 | 1310 | 1.20M | $1.73 |
+| `normal0A8` | 12m33 | 13 | 1407 | 1.71M | $2.14 |
+| `normal0A9` | 10m26 | 13 | 1112 | 1.11M | $1.56 |
+| `normal0A10` | 13m54 | 15 | 1273 | 1.35M | $1.93 |
 
 ### Indice0A (system prompt clause)
 
