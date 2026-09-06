@@ -17,7 +17,7 @@ For example:
 ```
 
 I tested this on GPT 5.6 Sol over-engineering cases with consistent results. Using a direct `promise-me` instruction produced significantly less code than simply adding an over-engineering rule to the system prompt.
-As well as 50% reduction in over-engineering evaluated by LLM judges.
+As well as average 2x reduction in over-engineering evaluated by LLM judges.
 
 **17.8% less code on average**, with **80% of runs producing less code** than even the smallest system-prompt runs.
 
@@ -47,15 +47,22 @@ The main result:
 
 **1050 lines → 863–866 lines**, depending on which promise variant was used.
 That's about **17.8% less code** than the system-prompt clause.
-As well as 50% reduction in over-engineering evaluated by LLM judges. 
-
-(TABLE HERE)
-
+As well as average 2x reduction in over-engineering evaluated by LLM judges.
 There was no meaningful difference in cost.
 
 The system-prompt guidance was removed before the appropriate batches, so the runs didn't stack different conditions on top.
 
 The exact prompts are in [`study/study-prompts.md`](study/study-prompts.md).
+
+## LLM over-engineering score table. 
+
+They were asked to rate 20 randomized implementations (random folder names, all mixed) with system prompt clause vs. promise-me skill in first-person wording)
+| Rater | Promise | Sys.Prompt | Gap | Ratio | Cohen's d |
+|:------|-----------:|-----------:|----:|------:|----------:|
+| GLM 5.3 Flash | 32.6 | 48.0 | +15.4 | 1.47× | +1.54 |
+| Luna (Max) | 35.7 | 61.3 | +25.6 | 1.72× | +2.02 |
+| Muse Spark 1.3| 16.7 | 45.3 | +28.6 | 2.71× | +1.49 |
+| **Average** | **28.3** | **51.9** | **+23.2** | **1.97×** | **+1.68** |
 
 ## Test setup
 
