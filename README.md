@@ -63,6 +63,8 @@ The system-prompt guidance was removed before the appropriate batches, so the ru
 
 The exact prompts are in [`study/study-prompts.md`](study/study-prompts.md).
 
+More study data is at [`study/raw-runs-stats.md`](study/raw-runs-stats.md).
+
 ## LLM over-engineering score (OE Score) table. 
 
 They were asked to rate 20 randomized implementations (random folder names, all mixed) with system prompt clause vs. promise-me skill in first-person wording)
