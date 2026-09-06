@@ -16,7 +16,8 @@ For example:
 /promise-me you will not over-engineer or over-investigate in this session.
 ```
 
-I tested this on GPT 5.6 Sol over-engineering cases with consistent results. Using a direct `promise-me` instruction produced significantly less code than simply adding an over-engineering rule to the system prompt.
+I tested this on GPT 5.6 Sol over-engineering cases with consistent results. 
+Using a direct `promise-me` instruction produced significantly less code than simply adding an over-engineering rule to the system prompt.
 As well as average 2x reduction in over-engineering evaluated by LLM judges.
 
 **17.8% less code on average**, with **80% of runs producing less code** than even the smallest system-prompt runs.
