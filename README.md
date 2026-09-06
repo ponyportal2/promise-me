@@ -69,7 +69,7 @@ This was skipped for the normal and system-prompt batches.
 
 **Prompt 3:** Ask the model to create the MCP server. This is the actual over-engineering test.
 
-**Prompt 4:** Have the model to measure measure the resulting work with deterministic scripts (though the model can bypass these and calculate the metrics directly if scripts conflict with its implementation (which didn't result in cheating)) - token usage, lines of code, number of source files, etc. and then archive the results.
+**Prompt 4:** Have the model to measure the resulting work with deterministic scripts (though the model can bypass these and calculate the metrics directly if scripts conflict with its implementation (which didn't result in cheating)) - token usage, lines of code, number of source files, etc. and then archive the results.
 
 The working directory is cleaned between runs.
 
